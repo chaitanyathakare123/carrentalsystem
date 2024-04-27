@@ -1,0 +1,26 @@
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <!-- Profile Icon with Upload Button -->
+                    <div class="mb-3">
+                        <img src="{% if user.photo %}{{ user.photo.url }}{% else %}/path/to/default/profile/image.png{% endif %}" class="rounded-circle" alt="Profile Picture" width="150" height="150">
+                        <input type="file" class="form-control-file mt-2" id="profileImage" name="profileImage">
+                    </div>
+                    <!-- User's Name -->
+                    <h4>{{ user.name }}</h4>
+                    <!-- User's Email -->
+                    <p>{{ user.email }}</p>
+                    <!-- Logout Button -->
+                    <form action="/logout" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

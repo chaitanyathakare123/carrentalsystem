@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+    .container {
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        height: 100vh;
+        
+    }
+    
+    .row {
+        display: flex;
+    }
+    
+    .col-md-4 {
+        flex: 0 0 50%; /* Each column takes 50% width */
+    }
+
+    .car-image {
+        max-width: 100%; /* Set maximum width for the image */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    .form-container {
+        padding-left: 20px; /* Adjust this value for space between the image and the form */
+    }
+    
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box-container">
+                    {% if car_id == "1" %}
+                        <img src="static/3x5p9e3m.png" alt="Car 1">
+                    {% elif car_id == "2" %}
+                        <img src="static/zwwzclcs.png" alt="Car 2">
+                    {% elif car_id == "3" %}
+                        <img src="static/2gqyegaj.png" alt="Car 3">
+                    {% elif car_id == "4" %}
+                        <img src="static/sp1jtnoo.png" alt="Car 4">
+                    {% elif car_id == "5" %}
+                        <img src="static/maphygl9.png" alt="Car 5">
+                    {% elif car_id == "6" %}
+                        <img src="static/aqrfwrev.png" alt="Car 6">
+                    {% elif car_id == "7" %}
+                        <img src="static/ryf5urxs.png" alt="Car 7">
+                    {% elif car_id == "8" %}
+                        <img src="static/ykdithi5.png" alt="Car 8">
+                    {% elif car_id == "9" %}
+                        <img src="static/ycz58jcl.png" alt="Car 9">
+                    {% endif %}
+                </div>
+            </div>
+    
+            <div class="col-md-8 form-container">
+                <h2>{{ car.name }}</h2>
+            <p>{{ car.description }}</p>
+             
+                <form action="/rent" method="post">
+                   
+                    
+                    <div class="form-group">
+                        <label for="rental_period">Rental Period (in days):</label>
+                        <input type="number" class="form-control" id="rental_period" name="rental_period" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup_location">Pickup Location:</label>
+                        <input type="text" class="form-control" id="pickup_location" name="pickup_location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="return_location">Return Location:</label>
+                        <input type="text" class="form-control" id="return_location" name="return_location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="additional_notes">Additional Notes:</label>
+                        <textarea class="form-control" id="additional_notes" name="additional_notes" rows="3"></textarea>
+                    </div>
+                    {% csrf_token %}
+                    <input type="hidden" name="car_id" value="{{ car_id }}">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+    </body>
+</html>    

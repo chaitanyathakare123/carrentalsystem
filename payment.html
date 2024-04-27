@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <!-- Your CSS styles here -->
+</head>
+<body>
+    <h1>Payment Options</h1>
+
+    <h2>Credit/Debit Card</h2>
+    <form action="{% url 'process_card_payment' %}" method="post">
+        {% csrf_token %}
+        <!-- Add form fields for card number, expiration date, CVV, etc. -->
+        <input type="text" name="card_number" placeholder="Card Number" required><br>
+        <input type="text" name="expiry_date" placeholder="Expiration Date" required><br>
+        <input type="text" name="cvv" placeholder="CVV" required><br>
+        <button type="submit">Pay with Card</button>
+    </form>
+
+    <h2>PayPal</h2>
+    <!-- Link to PayPal payment page -->
+    <a href="https://www.paypal.com">Pay with PayPal</a>
+
+    <!-- Other payment options can be added similarly -->
+
+</body>
+</html>

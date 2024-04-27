@@ -1,0 +1,142 @@
+{%extends 'base.html'%}
+{% block title%}About{% endblock title%}
+ {%block body%}
+
+<section class="about" id="about">
+    <div class="heading">
+        <span> About us</span>
+        <h1> Best Customer Experience </h1>
+    </div>
+    <div class="about-container">
+        <div class="about-img">
+            <img src="https://imgd.aeplcdn.com/1200x900/cw/ec/37988/Toyota-Etios-Cross-Exterior-146348.jpg?wm=0"
+        </div>
+    </div>
+    <div class="about-text">
+            <span> About us</span>
+            <p> The fifth-generation Supra arrived with a completely different mission to its predecessors. While previous Supras had blended performance and luxury, this new car, co-developed with BMW, would be primarily a sports car.ntensify the connection between you and your GR Supra. Available with a 6-speed intelligent Manual Transmission (iMT) that optimizes your revs as you shift, the 3.0L 6-cylinder engine puts 382 horsepower * and 368 lb.-ft. of torque at your fingertips. Take the reins as you go through every corner while the g-forces make you feel like you're sinking into your seat. It’s time to personalize the power delivered to the rear wheels and find the sweet spot where your revs match up to your heartbeat.</p>
+            <a href="#" class="btn">Learn more</a>
+    </div>
+    <div class="review-container">
+        <div class="box">
+            <div class="rev-img">
+                <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg">
+            </div>
+            <h2> Someone Name</h2>
+            <div class="stars">
+
+            </div>
+            <p>With its striking1design, Exhilarating performance, And advanced technology, The supra represents the pinnacle of automotive1engineering and is sure to satisfy even the most discerning enthusiasts. Whether you're a longtime supra fan or1new to the fold, This car is guaranteed to leave a lasting impression.</p>
+        </div>
+    </div>
+     <div class="review-container">
+        <div class="box">
+            <div class="rev-img">
+                <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg">
+            </div>
+            <h2> Someone Name</h2>
+            <div class="stars">
+
+            </div>
+            <P> With its striking1design, Exhilarating performance, And advanced technology, The supra represents the pinnacle of automotive1engineering and is sure to satisfy even the most discerning enthusiasts. Whether you're a longtime supra fan or1new to the fold, This car is guaranteed to leave a lasting impression.</P>
+        </div>
+    </div>
+     <div class="review-container">
+        <div class="box">
+            <div class="rev-img">
+                <img src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg">
+            </div>
+            <h2> Someone Name</h2>
+            <div class="stars">
+
+            </div>
+            <p class="word">With its striking1design, Exhilarating performance, And advanced technology, The supra represents the pinnacle of automotive1engineering and is sure to satisfy even the most discerning enthusiasts. Whether you're a longtime supra fan or1new to the fold, This car is guaranteed to leave a lasting impression.</p>
+        </div>
+    </div>
+</section>
+<!--css work of about us---->
+<style>
+   .heading{
+   text-align:center;
+   }
+    .about-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    margin-top:2rem;
+    align-items: center;
+    gap:1rem;
+    margin-top:1rem;
+    }
+    .about-img img{
+    width:100%;
+    position: relative;
+    }
+
+    .about-text span{
+    font-weight:500;
+    text-transform:uppercase;
+    margin-bottom:40px;
+    text-align:center;
+    }
+    .about-text {
+       display: flex;
+       flex-direction: column;
+       justify-content: right;
+       }
+    .about-text p{
+
+    }
+    .about-text .btn{
+    padding:10px 20px;
+    background:#474fa0;
+    color:#fff;
+    border-radius:0.5rem;
+    margin-top:20px;
+    margin-left:250px;
+    margin-right:250px;
+    }
+
+    <!---about us style end--->
+
+     .review-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    grid:1rem;
+    margin-top:2rem;
+    }
+   .review-container .rev-img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+    }
+    .review-container .rev-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    }
+    .review-container .box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    box-shadow:1px 4px 41px rgba(0, 0, 0, 0.1);
+    border-radius:0.5rem;
+
+    }
+    .review-container.box p{
+    font-style:italic;
+    padding-left:20px;
+    }
+    .review-container .box h2{
+    font-size:1.1rem;
+    font-weight:600;
+    margin:0.5rem 0 0.5rem;
+    }
+
+</style>
+
+
+{% endblock body%}
